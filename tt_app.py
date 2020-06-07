@@ -12,7 +12,7 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 512*1024
 
-model = tf.keras.models.load_model('Model')
+model = tf.keras.models.load_model('./Model')
 
 def allowed_file(filename):
     return '.' in filename and \

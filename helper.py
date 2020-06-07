@@ -2,9 +2,9 @@ import tensorflow as tf
 import librosa
 import numpy as np
 
-def load_model():
-    model = tf.keras.models.load_model('Model')
-    return model
+# def load_model():
+#     model = tf.keras.models.load_model('Model')
+#     return model
 
 def wav_to_img(path):
     audio, sr = librosa.load(path,duration=2.97)
