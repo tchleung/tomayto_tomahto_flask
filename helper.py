@@ -3,7 +3,7 @@ import librosa
 import numpy as np
 
 def load_model():
-    model = tf.keras.models.load_model('./Model')
+    model = tf.keras.models.load_model('Model')
     return model
 
 def wav_to_img(path):
