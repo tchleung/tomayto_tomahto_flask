@@ -1,7 +1,7 @@
 from flask import Flask, flash, render_template, request
 from werkzeug.utils import secure_filename
 import os
-from helper import load_model
+import tensorflow as tf
 from helper import wav_to_img
 from helper import make_prediction
 
@@ -12,7 +12,7 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 512*1024
 
-model = load_model()
+model = tf.keras.models.load_model('Model')
 
 def allowed_file(filename):
     return '.' in filename and \
