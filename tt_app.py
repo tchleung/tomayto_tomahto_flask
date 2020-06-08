@@ -36,4 +36,4 @@ def upload_file():
         else:
             return str('Format error, please go back and upload a .wav recording')
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080, debug=True)
+    app.run(host='0.0.0.0', port=8080, debug=True, ssl_context='adhoc')
