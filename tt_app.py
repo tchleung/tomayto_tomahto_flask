@@ -5,7 +5,7 @@ from helper import load_model
 from helper import wav_to_img
 from helper import make_prediction
 
-UPLOAD_FOLDER = './temp_audio/'
+UPLOAD_FOLDER = '/temp_audio/'
 ALLOWED_EXTENSIONS = {'wav'}
 
 app = Flask(__name__)
@@ -36,4 +36,5 @@ def upload_file():
         else:
             return str('Format error, please go back and upload a .wav recording')
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080, debug=True, ssl_context='adhoc')
+    # app.run(host='0.0.0.0', port=8080, debug=True, ssl_context='adhoc')
+    app.run(host='0.0.0.0', port=8080, debug=True)
