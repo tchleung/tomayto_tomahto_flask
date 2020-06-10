@@ -27,11 +27,12 @@ def upload_file():
     if request.method == 'POST':
         f = request.files['file']
         if allowed_file(f.filename):
-            filename = secure_filename(f.filename)
-            f.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
-            test_arr = wav_to_img(os.path.join(app.config['UPLOAD_FOLDER'],filename))
+            # filename = secure_filename(f.filename)
+            # f.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
+            # test_arr = wav_to_img(os.path.join(app.config['UPLOAD_FOLDER'],filename))
+            test_arr = wav_to_img(f)
             prediction = make_prediction(model,test_arr)
-            os.remove(os.path.join(app.config['UPLOAD_FOLDER'],filename))
+            # os.remove(os.path.join(app.config['UPLOAD_FOLDER'],filename))
             return render_template('prediction.html', message=prediction)
         else:
             return str('Format error, please go back and upload a .wav recording')
